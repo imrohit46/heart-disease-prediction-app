@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Heart Disease Prediction System</title>
+    </head>
+    <body>
+        <h1>Heart Disease Prediction System</h1><hr>
+
+        <!--
+            Age
+            Gender (1 = male, 0 = female)
+            Chest Pain Type (1:typical angina,2:atypical angina,3:non-anginal pain,4:asymptomatic)
+            Resting Blood Pressure
+            Cholesterol
+            Fasting Blood Sugar
+            Rest ECG (0 = normal, 1 = having ST-T wave abnormality, 2 = showing probable or definite left ventricular hypertrophy)
+            Max Heart Rate Achieved
+            Exercise Induced Angina (1 = yes; 0 = no)
+            ST Depression
+            ST Slope (1: upsloping, 2: flat, 3: downsloping)
+            No of Major Vessels (0 - 3)
+            Thalassemia (3 = normal; 6 = fixed defect; 7 = reversable defect)
+        -->
+
+        <form action="{{ url_for('predict') }}" method="POST">
+            <input type="text" name='age' placeholder="Age" required="required"> <br><br>
+            <input type="text" name='gender' placeholder="Gender(1=male,0=female)" required="required"> <br><br>
+            <input type="text" name='cp' placeholder="Chest Pain Type (1:typical angina,2:atypical angina,3:non-anginal pain,4:asymptomatic)" required="required"><br><br>
+            <input type="text" name='rbp' placeholder="Resting Blood Pressure" required="required"><br><br>
+            <input type="text" name='cholesterol' placeholder="Cholesterol" required="required"><br><br>
+            <input type="text" name='fbs' placeholder="Fasting Blood Sugar" required="required"><br><br>
+            <input type="text" name='recg' placeholder="Rest ECG (0 = normal, 1 = having ST-T wave abnormality, 2 = showing probable or definite left ventricular hypertrophy)" required="required"><br><br>
+            <input type="text" name='maxheartrate' placeholder="Max Heart Rate Achieved" required="required"><br><br>
+            <input type="text" name='eia' placeholder="Exercise Induced Angina(1=yes, 0=no)" required="required"><br><br>
+            <input type="text" name='stdepression' placeholder="ST Depression" required="required"><br><br>
+            <input type="text" name='stslope' placeholder="ST Slope(1:upsloping,2:flat,3:downsloping)" required="required"><br><br>
+            <input type="text" name='nvessels' placeholder="No of Major Vessels (0 - 3)" required="required"><br><br>
+            <input type="text" name='thalassemia' placeholder="Thalassemia(3=normal;6=fixed defect;7=reversable defect)" required="required"><br><br>
+            <button type="submit">Predict</button>
+        </form>
+        <br>
+        {{ prediction_text }}
+    </body>
+</html>
